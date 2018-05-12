@@ -1,5 +1,5 @@
 import re
-from pymongo import MongoClient
+from pymongo import MongoClient, TEXT
 from bson import ObjectId
 from bson.errors import InvalidId
 from flask_restful import abort
@@ -212,6 +212,10 @@ class ApiUtils:
             data = json_util.loads(data_json)
 
             song_collection.insert_many(data)
+
+            # index by artist_lowercae and title_lowercae
+            song_collection.create_index([('artist_lowercase', TEXT), ('title_lowercase', TEXT)],
+                                         name='artist_title_index')
 
             # save level totals (count and sum for each level)
             # this will be a collection with only one element

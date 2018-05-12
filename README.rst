@@ -1,4 +1,4 @@
-Songs
+API
 ======
 
 Sample API with Flask and Python
@@ -17,7 +17,7 @@ Or on Windows cmd::
     py -3 -m venv venv
     venv\Scripts\activate.bat
 
-Install Songs::
+Install Application::
 
     pip install -e .
 
@@ -65,6 +65,6 @@ Test
 ----
 
 ::
-
+    pip install pytest
     pytest
 
