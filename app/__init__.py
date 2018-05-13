@@ -68,5 +68,11 @@ def create_app(config_file=None):
 
     api.add_resource(InitDatabase, '/setup/test/data')
 
+    class HelloApi (Resource):
+        def get(self):
+            return {'Hello': 'Api'}
+
+    api.add_resource(HelloApi, '/')
+
     return app
 
