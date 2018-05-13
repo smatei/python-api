@@ -30,7 +30,7 @@ Setup mongodb:
 Run
 ---
 
-::
+On Linux::
 
     export FLASK_APP=app
     export FLASK_ENV=development
@@ -44,7 +44,7 @@ Or on Windows cmd::
 
 Open http://127.0.0.1:5000/setup/test/data in a browser. This will populate the dev database with some data.
 
-After that, you can start using the API.
+After that, you can start using the API::
 
 
     http://127.0.0.1:5000/songs/<page_size>/<page_num>
@@ -52,19 +52,24 @@ After that, you can start using the API.
     http://127.0.0.1:5000/songs/avg/rating/<song_id>
     http://127.0.0.1:5000/songs/search/<message>
 
-or
+or::
 
    curl http://localhost:5000/songs/10/2 -X GET -v
 	
-or
+
+or::
 	
-   curl http://localhost:5000/songs/rating -d '{"song_id":"5af52fb1b8dd0d53888e9f7d", "rating": 3}' -X POST -v
+    curl http://localhost:5000/songs/rating -d '{"song_id":"5af52fb1b8dd0d53888e9f7d", "rating": 3}' -X POST -v
 
 
 Test
 ----
 
-::
+Install pytest::
+
     pip install pytest
+
+Run tests::
+
     pytest
 
